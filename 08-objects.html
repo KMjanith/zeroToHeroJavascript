@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        const product = {
+            name: "socks",
+            price: 48,
+            ['delivery-time']: 10,
+            fun: function prinMyName(){
+                console.log("hello")
+            }
+
+        }
+
+        console.log(product)
+        console.log(product.name)
+        console.log(product.price)
+
+        product.newProperty = "new value"
+        console.log(product.newProperty) 
+        delete product.newProperty
+        console.log(product.newProperty) 
+        console.log(product['delivery-time'])  //objects that do not work for dot notation we can use bracket notation
+        product.fun()
+
+        //convert javascript objec to JSON
+        JSON.stringify(product)
+        console.log(JSON.stringify(product))  // note the function is not displaying
+
+        //convert JSON to javascript object
+        const json = JSON.stringify(product)
+        console.log(JSON.parse(json))
+
+        //saving data in the localStorage
+        //localStorage only support the string data type
+        localStorage.setItem('product', JSON.stringify(product))  //'product is the variable'
+
+        //get the values
+        //localStorage.getItem('product')
+        console.log(JSON.parse(localStorage.getItem('product')))
+
+        //remove variable from the localStorage
+        localStorage.removeItem('product')
+
+
+        //null = surely we want to be something flse
+        //undefined = if something is false it will get a default value if defined
+
+        //auto-boxing -> automatically wrap something in a object
+        console.log("hello".length)
+        console.log("kavindu janith".toUpperCase())
+        //auto-boxing does not work for null and undefined
+
+        const object2 = {message: "hello"}
+        console.log(object2)
+
+        const object3 = object2
+        object2.message = "world"
+        console.log(object3)  //because object3 is a reference to object2
+        object3.message = "good job"
+        console.log(object2)  //because object2 is a reference to object3
+
+        const {message} = object2
+        console.log(message)
+
+        const object5  = {
+            //message: message
+            message,
+            method(){
+                console.log("hello")
+            }
+        }
+
+        console.log(object5)
+        object5.method()
+         
+
+
+
+    </script>
+</body>
+</html>

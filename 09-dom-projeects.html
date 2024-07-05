@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sb-btn{
+            padding: 10px 20px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            height: 50px;
+            width: 150px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .is-subribed{
+            background-color: aliceblue;
+            color: black;
+        }
+
+        input{
+            height: 35px;
+            border-radius: 5px;
+            border: 1px solid rgb(175, 175, 175);
+
+        }
+
+        .calculate-btn{
+            height: 40px;
+            border: none;
+            background-color: seagreen;
+            color: white;
+            border-radius: 6px;
+            padding: 8px;
+        }
+
+        .Gaming1, .Gaming2, .Gaming3{
+            background-color: black;
+            color: white;
+            font-family: Arial;
+            height: 50px;
+            width: 100px;
+            font-size: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .Gaming-clicked{
+            background-color: rgb(214, 212, 212);
+            color: black;
+        }
+        
+
+
+        
+    </style>
+</head>
+<br>
+    <p>YouTube Subscribe button</p>
+    <button
+    onclick="
+    subscribeButton()
+    " 
+    class="subscribe-btn sb-btn">Subscribe</button>
+
+    <br>
+    <br>
+
+    <p>Amazon shipping calculator</p>
+    <p>Orders under $40 = +$10 shipping</p>
+    <p>Order over $50 free shipping</p>
+    <input type="number" onkeydown="
+    inputEventHandler()
+    "   >
+    <button onclick="Calculate()" class="calculate-btn">Calculate</button>
+    <p class="calculated-value"></p>
+
+    <button class="Gaming1" onclick="gaminClass()">Gaming</button>
+    <button class="Gaming2" onclick="gaminClass()">Music</button>
+    <button class="Gaming3" onclick="gaminClass()" >Tech</button>
+
+    <script>
+
+        function inputEventHandler(){
+            if(event.key === 'Enter'){
+                Calculate();
+                }
+        }
+        function subscribeButton(){
+            const buttonHTML = document.querySelector('.sb-btn');
+                if(buttonHTML.innerText === 'Subscribe'){
+                    buttonHTML.innerText = 'Subscribed';
+                    buttonHTML.classList.add('is-subribed');    
+                } else {
+                    buttonHTML.innerText = 'Subscribe';
+                    buttonHTML.classList.remove('is-subribed');  
+                }
+        }
+
+
+        function Calculate(){
+            const amount = document.querySelector('input').value;
+            const result = document.querySelector('.calculated-value');
+            if(amount >= 50){
+                result.innerText = '$' + amount
+            }else{
+                const realAmount = parseInt(amount) + 10
+                result.innerText = '$' + (realAmount)
+            }
+        }
+
+        function gaminClass(){
+            const value = event.target.innerText;
+            const gaming1 = document.querySelector('.Gaming1');
+            const gaming2 = document.querySelector('.Gaming2');
+            const gaming3 = document.querySelector('.Gaming3');
+        
+            if(value === "Gaming"){
+                gaming1.classList.add('Gaming-clicked');
+                gaming2.classList.remove('Gaming-clicked');
+                gaming3.classList.remove('Gaming-clicked');
+            } else if(value === "Music"){
+                gaming2.classList.add('Gaming-clicked');
+                gaming1.classList.remove('Gaming-clicked');
+                gaming3.classList.remove('Gaming-clicked');
+            } else if(value === "Tech"){
+                gaming3.classList.add('Gaming-clicked');
+                gaming1.classList.remove('Gaming-clicked');
+                gaming2.classList.remove('Gaming-clicked');
+            }
+        }
+
+        //window object represents the browser window
+        console.log(window)
+    </script>
+</body>
+</html>

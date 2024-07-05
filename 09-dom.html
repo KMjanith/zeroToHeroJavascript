@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+
+    <button class="hello-botton" id="hello-btn">Hello</button>
+    <button class="world-btn" id="world-btn">world</button>
+
+
+    <script>
+        /*
+        document.body.innerHTML = "hello"  //replace the body of the html with "hello"
+        document.title = "good job"  //change the page title
+        */
+
+        console.log(document.body)
+
+        //we can combine html to javascript
+
+        //document.body.innerHTML = "<button>good job</button>"
+
+        console.log(document.querySelector('button')) //get the first button in the html
+        document.querySelector('button').innerHTML = "changed"
+        document.querySelector('.world-btn').innerHTML = "Second button"
+
+        
+
+
+
+    </script>
+</body>
+</html>

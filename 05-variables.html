@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+
+    <button onclick="console.log(`cart quantity: ${cartQuantity}`)">
+        show quantity
+    </button>
+    <button onclick="
+    cartQuantity = cartQuantity + 1;
+    console.log(`cart quantity: ${cartQuantity}`)
+    ">Add to cart</button>
+    <button onclick="
+    cartQuantity = cartQuantity + 2;
+    console.log(`cart quantity: ${cartQuantity}`)
+    ">+2</button>
+    <button onclick="
+    cartQuantity = cartQuantity + 3;
+    console.log(`cart Quantity: ${cartQuantity}`)
+    ">+3</button>
+    <button onclick="
+    cartQuantity = 0;
+    console.log(`cart Quantity: ${cartQuantity}`)
+    ">Reset cart</button>
+
+    <div style="padding: 10px;">
+        <button
+        onclick="calcualtorString = calcualtorString + '1'; 
+        console.log(calcualtorString)"
+        >1</button>
+        <button
+        onclick="calcualtorString = calcualtorString + '2'; 
+        console.log(calcualtorString)"
+        >2</button>
+        <button
+        onclick="calcualtorString = calcualtorString + '3'; 
+        console.log(calcualtorString)"
+        >3</button>
+        <button
+        onclick="calcualtorString = calcualtorString + '+'; 
+        console.log(calcualtorString)"
+        >+</button>
+        <button
+        onclick="calcualtorString = calcualtorString + '-'; 
+        console.log(calcualtorString)"
+        >-</button>
+    </div>
+
+
+    <script>
+        let vriable1 = 3
+        console.log(vriable1)
+
+        let calculation = 5 + 5
+        console.log(calculation)
+
+        let variable3 = 'malsha'
+        variable3 = "soysa"    //can do this
+        console.log(variable3)   
+
+        var message = 'hello'
+        message = 'world'   //can do this
+        console.log(message)
+
+        let cartQuantity = 0
+        let calcualtorString = ''
+
+        const variable2 = 'hello'
+        variable2 = 'world'   //cannot do this
+
+            
+    </script>
+</body>
+</html>
